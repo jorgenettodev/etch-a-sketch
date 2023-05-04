@@ -10,6 +10,7 @@ const matrix = document.querySelector('.container');
 function createBlock(size) {
     let block = document.createElement('div');
     block.classList.add('block');
+    
     let blockSize = `${400 / size}px`;
     block.style.width = blockSize;
     block.style.height = blockSize;
