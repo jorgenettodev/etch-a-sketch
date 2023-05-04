@@ -6,9 +6,13 @@ const matrix = document.querySelector('.container');
         // create a div element
         // give classList.add = block
         // append the div element to the matrix
-function createBlock() {
+
+function createBlock(size) {
     let block = document.createElement('div');
     block.classList.add('block');
+    let blockSize = `${400 / size}px`;
+    block.style.width = blockSize;
+    block.style.height = blockSize;
     matrix.appendChild(block);
 }
 
@@ -18,11 +22,18 @@ function createBlock() {
     // For let i = 1; i <= 4; i++
         // for let j = 1; j <= 4; j++
             // createDiv
-for (let i = 1; i <= 4; i++) {
-    for (let j = 1; j <=4; j++) {
-        createBlock();
+
+// function: render the blocks inside of the grid flexbox-container. The height and width of each block will be the size of the grid / number of rows/columns           
+function render() {
+    let size = parseInt(prompt("whats the size of the grid you want?"));
+    for (let i = 1; i <= size; i++) {
+        for (let j = 1; j <= size; j++) {
+            createBlock(size);
+        }
     }
 }
+
+render();
 
 // ### get the user's click on the matrix and call the function changeBlockColor
 // matrix.addEventListener('mousedown', changeBlockColor);
