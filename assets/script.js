@@ -26,7 +26,7 @@ function createBlock(size) {
 
 // function: render the blocks inside of the grid flexbox-container. The height and width of each block will be the size of the grid / number of rows/columns           
 function render() {
-    let size = parseInt(prompt("whats the size of the grid you want?"));
+    let size = 10;
     for (let i = 1; i <= size; i++) {
         for (let j = 1; j <= size; j++) {
             createBlock(size);
@@ -36,16 +36,29 @@ function render() {
 
 render();
 
-// ### get the user's click on the matrix and call the function changeBlockColor
+// ############### get the user's click on the matrix and call the function changeBlockColor
 // matrix.addEventListener('mousedown', changeBlockColor);
-matrix.addEventListener('mousedown', changeBlockColor)
+
+// If mouseleave, then remove the mousedown eventListener
+
+
+// ### if the mousedown event type is on, then active the  eventListener for 'mouseover' and call the changeBlockColor function.
+matrix.addEventListener('mousedown', () => {
+    matrix.addEventListener('mouseover', changeBlockColor);
+});
+
+// ######### if mouse is down, changeBlockColor. // This was added to call the function as soon as the mouse is down.
+matrix.addEventListener('mousedown', changeBlockColor);
+
+matrix.addEventListener('mouseup', () => {
+    matrix.removeEventListener('mouseover', changeBlockColor);
+});
 
 // ### create the following function: it receives a divElement as parameter. 
     // what it does: change the backgroundColor of the div to black
 
 function changeBlockColor(event) {
-    console.log(event.target);
-    let block = event.target;
-    block.classList.toggle('black');
 
+        let block = event.target;
+        block.classList.toggle('black');
 }
