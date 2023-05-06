@@ -56,6 +56,11 @@ function renderMatrix(size) {
     }
 }
 
+function newGrid(size) {
+    removeBlocks(matrix);
+    renderMatrix(size);
+}
+
 renderMatrix(16);
 
 // ############### get the user's click on the matrix and call the function changeBlockColor
@@ -88,3 +93,21 @@ function changeBlockColor(event) {
         let block = event.target;
         block.classList.toggle('black');
 }
+
+
+// ################# FEATURE: slider range
+    // 1. - get the inputSlider value
+const inputSlider = document.querySelector('#inputSlider');
+// 2. - get the output field
+const outputField = document.querySelector('#sliderValue');
+    // 3. - add eventListener to the slider
+inputSlider.addEventListener('input', (e) => {
+    console.log('mudou o valor do input');
+    size = inputSlider.value
+    outputField.innerText = `Grid Layout: ${size} X ${size}`;
+    newGrid(size);
+    
+
+})
+    // 4. - update the output based on the value
+
