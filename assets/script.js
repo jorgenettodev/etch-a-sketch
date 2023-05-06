@@ -1,5 +1,5 @@
 // ### get the matrix container div
-const matrix = document.querySelector('.container');
+const matrix = document.querySelector('.drawingBox');
 
 // ### create the function to create each block
     // function: createBlock
@@ -24,9 +24,25 @@ function createBlock(size) {
         // for let j = 1; j <= 4; j++
             // createDiv
 
-// function: render the blocks inside of the grid flexbox-container. The height and width of each block will be the size of the grid / number of rows/columns           
-function render() {
-    let size = 16;
+// function: render the blocks inside of the grid flexbox-container. The height and width of each block will be the size of the grid / number of rows/columns    
+const inGridSize = document.querySelector('#inputGridSize');
+const btnGridSize = document.querySelector('#btnGridSize');
+
+btnGridSize.addEventListener('click', (e) => {
+    let size = inGridSize.value;
+    removeBlocks(matrix);
+    renderMatrix(size);
+});
+
+// ################ get the input Value, though changing the grid Layout
+
+// ## create function that delete all the elements inside of the matrix 
+function removeBlocks(parentElement) {
+    while(parentElement.firstChild)
+        parentElement.removeChild(parentElement.firstChild);
+}
+
+function renderMatrix(size) {
     for (let i = 1; i <= size; i++) {
         for (let j = 1; j <= size; j++) {
             createBlock(size);
@@ -34,7 +50,7 @@ function render() {
     }
 }
 
-render();
+renderMatrix(16);
 
 // ############### get the user's click on the matrix and call the function changeBlockColor
 // matrix.addEventListener('mousedown', changeBlockColor);
