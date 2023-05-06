@@ -28,13 +28,19 @@ function createBlock(size) {
 const inGridSize = document.querySelector('#inputGridSize');
 const btnGridSize = document.querySelector('#btnGridSize');
 
+
+// ############## FEATURE: Change the grid layout based on the user input.
+// ################ get the input Value, though changing the grid Layout
 btnGridSize.addEventListener('click', (e) => {
     let size = inGridSize.value;
+    if (size > 100) {
+        alert('It cannot be greater than 100');
+        return;
+    }
     removeBlocks(matrix);
     renderMatrix(size);
 });
 
-// ################ get the input Value, though changing the grid Layout
 
 // ## create function that delete all the elements inside of the matrix 
 function removeBlocks(parentElement) {
