@@ -18,30 +18,6 @@ function createBlock(size) {
 }
 
 
-
-// ### create the matrix using a for loop to generate the required number of blocks.
-    // For let i = 1; i <= 4; i++
-        // for let j = 1; j <= 4; j++
-            // createDiv
-
-// function: render the blocks inside of the grid flexbox-container. The height and width of each block will be the size of the grid / number of rows/columns    
-const inGridSize = document.querySelector('#inputGridSize');
-const btnGridSize = document.querySelector('#btnGridSize');
-
-
-// ############## FEATURE: Change the grid layout based on the user input.
-// ################ get the input Value, though changing the grid Layout
-btnGridSize.addEventListener('click', (e) => {
-    let size = inGridSize.value;
-    if (size > 100) {
-        alert('It cannot be greater than 100');
-        return;
-    }
-    removeBlocks(matrix);
-    renderMatrix(size);
-});
-
-
 // ## create function that delete all the elements inside of the matrix 
 function removeBlocks(parentElement) {
     while(parentElement.firstChild)
@@ -61,7 +37,6 @@ function newGrid(size) {
     renderMatrix(size);
 }
 
-renderMatrix(16);
 
 // ############### get the user's click on the matrix and call the function changeBlockColor
 // matrix.addEventListener('mousedown', changeBlockColor);
@@ -87,11 +62,11 @@ matrix.addEventListener('mouseleave', () => {
 });
 
 // ### create the following function: it receives a divElement as parameter. 
-    // what it does: change the backgroundColor of the div to black
+// what it does: change the backgroundColor of the div to black
 
 function changeBlockColor(event) {
-        let block = event.target;
-        block.classList.toggle('black');
+    let block = event.target;
+    block.classList.toggle('black');
 }
 
 
@@ -100,7 +75,7 @@ function changeBlockColor(event) {
 const inputSlider = document.querySelector('#inputSlider');
 // 2. - get the output field
 const outputField = document.querySelector('#sliderValue');
-    // 3. - add eventListener to the slider
+// 3. - add eventListener to the slider
 inputSlider.addEventListener('input', (e) => {
     console.log('mudou o valor do input');
     size = inputSlider.value
@@ -111,3 +86,5 @@ inputSlider.addEventListener('input', (e) => {
 })
     // 4. - update the output based on the value
 
+
+    renderMatrix(16);
