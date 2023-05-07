@@ -33,3 +33,12 @@ h1 {
 .black {
     background-color: black;
 }
+
+/* slider input */
+
+.settings {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 100px;
+}
