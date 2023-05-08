@@ -65,10 +65,10 @@ matrix.addEventListener('mouseleave', () => {
 // ### create the following function: it receives a divElement as parameter. 
 // what it does: change the backgroundColor of the div to black
 
-let inputColor = '#f00';
+const inputColor = document.querySelector('#inputColorPicker');
 function changeBlockColor(event) {
     let block = event.target;
-    let newColor = inputColor
+    let newColor = inputColor.value;
     if (block.style.backgroundColor != 'white') {
         block.style.backgroundColor = 'white';
     } else if (block.style.backgroundColor == 'white') {
