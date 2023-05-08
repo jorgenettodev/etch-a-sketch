@@ -14,6 +14,7 @@ function createBlock(size) {
     let blockSize = `${400 / size}px`;
     block.style.width = blockSize;
     block.style.height = blockSize;
+    block.style.backgroundColor = 'white';
     matrix.appendChild(block);
 }
 
@@ -64,10 +65,19 @@ matrix.addEventListener('mouseleave', () => {
 // ### create the following function: it receives a divElement as parameter. 
 // what it does: change the backgroundColor of the div to black
 
+let inputColor = '#f00';
 function changeBlockColor(event) {
     let block = event.target;
-    block.classList.toggle('black');
+    let newColor = inputColor
+    if (block.style.backgroundColor != 'white') {
+        block.style.backgroundColor = 'white';
+    } else if (block.style.backgroundColor == 'white') {
+        block.style.backgroundColor = newColor;
+    }
+
+    
 }
+
 
 
 // ################# FEATURE: slider range
