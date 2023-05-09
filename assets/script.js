@@ -70,15 +70,36 @@ const inputColor = document.querySelector('#inputColorPicker');
 function changeBlockColor(event) {
     let block = event.target;
     let newColor = inputColor.value;
-    if (block.style.backgroundColor != 'white') {
+    let rgbInput = hexToRGB(newColor);
+
+    // Se a cor do block for igual ao da nova Cor
+    if (block.style.backgroundColor == rgbInput) {
         block.style.backgroundColor = 'white';
-    } else if (block.style.backgroundColor == 'white') {
-        block.style.backgroundColor = newColor;
+    } else {
+        block.style.backgroundColor = rgbInput;
     }
+        // cor do bloco = white
+    // senao
+        // cor do block = corNova
+    
+    // if (block.style.backgroundColor != 'white') {
+    //     block.style.backgroundColor = 'white';
+    // } else if (block.style.backgroundColor == 'white') {
+    //     block.style.backgroundColor = newColor;
+    //     console.log(block.style.backgroundColor);
+    // }
 
     
 }
 
+function hexToRGB(hex) {
+    let red = parseInt(hex.substring(1,3), 16);
+    let green = parseInt(hex.substring(3,5), 16);
+    let blue = parseInt(hex.substring(5,7), 16);
+    let rgb = `rgb(${red}, ${green}, ${blue})`;
+    return rgb;
+    
+}
 
 
 // ################# FEATURE: slider range
