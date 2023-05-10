@@ -120,3 +120,20 @@ inputSlider.addEventListener('input', (e) => {
 
 
     renderMatrix(16);
+
+
+// ########## feature: colorCollection
+// functionality: let the user pick a color from a pre-defined color palette
+
+// get the div color collection
+const colorPalette = document.querySelector('.colorPalette');
+
+// when the user click, check the backgroundColor value, and set the current inputValue from the inputColor to the clicked color.
+
+colorPalette.addEventListener('click', (e) => {
+    console.log(e.target.style.backgroundColor);
+})
+
+function getColor() {
+    // helloworld
+}
