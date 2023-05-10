@@ -101,6 +101,16 @@ function hexToRGB(hex) {
     
 }
 
+function rgbToHex(rgb) {
+    // Usa uma regular expression para extrair os valores de red, blue e green.
+    const [, r, g, b] = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+    const redHex = Number(r).toString(16).padStart(2, '0');
+    const greenHex = Number(g).toString(16).padStart(2, '0');
+    const blueHex = Number(b).toString(16).padStart(2,'0');
+    const hex = `#${redHex}${greenHex}${blueHex}`;
+    return hex;
+}
+
 
 // ################# FEATURE: slider range
     // 1. - get the inputSlider value
@@ -131,7 +141,9 @@ const colorPalette = document.querySelector('.colorPalette');
 // when the user click, check the backgroundColor value, and set the current inputValue from the inputColor to the clicked color.
 
 colorPalette.addEventListener('click', (e) => {
-    console.log(e.target.style.backgroundColor);
+    let rgbColor = e.target.style.backgroundColor;
+    console.log(rgbColor);
+    inputColor.value = rgbToHex(rgbColor);
 })
 
 function getColor() {
