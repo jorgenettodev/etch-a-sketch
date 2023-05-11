@@ -13,13 +13,37 @@ h1 {
     text-align: center;
     margin-top: 10px;
 }
+.settings {
+    display: flex;
+    margin: 0 auto;
+    justify-content: flex-start;
+    margin-top: 100px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+}
 
 .colorPalette {
     display: flex;
     flex-wrap: wrap;
-    width: 200px;
+    width: 250px;
     height: 100px;
     margin: 0 auto;
+}
+
+/* ##### eraser ###### */
+
+.eraser__container {
+    background-color: white;
+    width: 150px;
+    justify-content: center;
+    height: 50px;
+    border-style: none;
+    cursor: pointer;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .color1 {
@@ -74,15 +98,6 @@ h1 {
 
 /* slider input */
 
-.settings {
-    display: flex;
-    margin: 0 auto;
-    justify-content: flex-start;
-    margin-top: 100px;
-    flex-direction: column;
-    align-items: center;
-
-}
 
 .colorPickerContainer {
     display: flex;

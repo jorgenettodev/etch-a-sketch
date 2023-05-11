@@ -73,21 +73,12 @@ function changeBlockColor(event) {
     let rgbInput = hexToRGB(newColor);
 
     // Se a cor do block for igual ao da nova Cor
-    if (block.style.backgroundColor == rgbInput) {
-        block.style.backgroundColor = 'white';
-    } else {
-        block.style.backgroundColor = rgbInput;
-    }
-        // cor do bloco = white
-    // senao
-        // cor do block = corNova
-    
-    // if (block.style.backgroundColor != 'white') {
+    // if (block.style.backgroundColor == rgbInput) {
     //     block.style.backgroundColor = 'white';
-    // } else if (block.style.backgroundColor == 'white') {
-    //     block.style.backgroundColor = newColor;
-    //     console.log(block.style.backgroundColor);
+    // } else {
+    //     block.style.backgroundColor = rgbInput;
     // }
+    block.style.backgroundColor = rgbInput;
 
     
 }
@@ -149,3 +140,13 @@ colorPalette.addEventListener('click', (e) => {
 function getColor() {
     // helloworld
 }
+
+
+// ##### feature: eraser #####
+const eraser = document.querySelector('#eraser');
+
+// when clicked, the color input will white, so the user can use it to erase the colors of the divs.
+eraser.addEventListener('click', (e) => {
+    inputColor.value = '#ffffff';
+
+})
