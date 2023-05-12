@@ -11,7 +11,7 @@ function createBlock(size) {
     let block = document.createElement('div');
     block.classList.add('block');
     
-    let blockSize = `${400 / size}px`;
+    let blockSize = `${650 / size}px`;
     block.style.width = blockSize;
     block.style.height = blockSize;
     block.style.backgroundColor = 'white';
@@ -112,7 +112,7 @@ const outputField = document.querySelector('#sliderValue');
 inputSlider.addEventListener('input', (e) => {
     console.log('mudou o valor do input');
     size = inputSlider.value
-    outputField.innerText = `Grid Layout: ${size} X ${size}`;
+    outputField.innerText = `Layout: ${size} X ${size}`;
     newGrid(size);
     
 
@@ -150,3 +150,11 @@ eraser.addEventListener('click', (e) => {
     inputColor.value = '#ffffff';
 
 })
+
+
+// ##### feature: reset
+const reset = document.querySelector('#btnReset');
+reset.addEventListener('click', () => {
+    newGrid();
+    renderMatrix(inputSlider.value);
+});

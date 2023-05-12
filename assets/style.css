@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -13,31 +14,70 @@ h1 {
     text-align: center;
     margin-top: 10px;
 }
+
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* settings container */
 .settings {
     display: flex;
-    margin: 0 auto;
-    justify-content: flex-start;
-    margin-top: 100px;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    justify-content: space-around;
+    border: 1px solid black;
+    padding: 10px;
+    height: 500px;
+    width: 450px;
+    border-radius: 10px;
+    background-color: aliceblue;
 
 }
 
-.colorPalette {
+/* slider input */
+    
+    
+.colorPickerContainer {
     display: flex;
-    flex-wrap: wrap;
-    width: 250px;
-    height: 100px;
-    margin: 0 auto;
+    align-items: center;
+    gap: 32px
+}
+
+#inputColorPicker {
+    width: 50px;
+    appearance: none;
+    height: 50px;
+    border-style: none;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.slider__value {
+    font-size: 16px;
+}
+
+.slider__container {
+    display: flex;
+    align-items: center;
+}
+
+
+
+#inputColorPicker::-webkit-color-swatch {
+    border-radius: 5px;
+    border: none;
+    box-shadow: inset;
 }
 
 /* ##### eraser ###### */
 
-.eraser__container {
+.eraser__container{
     background-color: white;
     width: 150px;
-    justify-content: center;
+    justify-content: space-around;
     height: 50px;
     border-style: none;
     cursor: pointer;
@@ -46,6 +86,27 @@ h1 {
     align-items: center;
 }
 
+.tool {
+    display: flex;
+    background-color: white;
+    width: 250px;
+    justify-content: space-around;
+    height: 50px;
+    border-style: none;
+    cursor: pointer;
+    border-radius: 10px;
+    align-items: center;
+}
+
+/* color palette */
+
+.colorPalette {
+    display: flex;
+    flex-wrap: wrap;
+    width: 252px;
+    height: 100px;
+
+}
 .color1 {
     background-color: #cc0001;
 }
@@ -79,12 +140,24 @@ h1 {
     margin:0;
 }
 
+/* reset button */
+
+.reset {
+    display: flex;
+    justify-content: center;
+}
+
+.reset__icon {
+    height: 30px;
+}
+
+/* ##### grid box ##### */
 .drawingBox {
     display: flex;
     flex-wrap: wrap;
-    width: 400px;
+    width: 650px;
+    height: 650px;
     background-color: aliceblue;
-    margin: 0 auto;
 }
 
 .block {
@@ -92,32 +165,3 @@ h1 {
     border: 1px solid black;
 }
 
-.defaultColor {
-    background-color: white;
-}
-
-/* slider input */
-
-
-.colorPickerContainer {
-    display: flex;
-    align-items: center;
-    gap: 32px
-}
-
-#inputColorPicker {
-    width: 50px;
-    appearance: none;
-    height: 50px;
-    border-style: none;
-    cursor: pointer;
-    border-radius: 12px;
-}
-
-
-
-#inputColorPicker::-webkit-color-swatch {
-    border-radius: 5px;
-    border: none;
-    box-shadow: inset;
-}
