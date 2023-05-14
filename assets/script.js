@@ -11,7 +11,7 @@ function createBlock(size) {
     let block = document.createElement('div');
     block.classList.add('block');
     
-    let blockSize = `${650 / size}px`;
+    let blockSize = `${550 / size}px`;
     block.style.width = blockSize;
     block.style.height = blockSize;
     block.style.backgroundColor = 'white';
